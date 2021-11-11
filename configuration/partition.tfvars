@@ -5,32 +5,34 @@
    This file holds a sample of variable overrides to be used by pipelines
 */
 
+/* The following items are recommended to override in custom.tfvars
+  1. Resource Tags
+*/
 
 prefix = "osdu-self"
 
 resource_tags = {
   environment = "Self Managed OSDU"
+  contact = "<your_name>"
+  repo = "https://github.dev/danielscholl/self-managed-osdu"
 }
 
 data_partition_name = "opendes"
 
+
+# Storage Settings
+storage_replication_type = "GZRS"
+sa_retention_days        = 30
+
+
+# Database Settings
+cosmosdb_consistency_level = "Session"
 cosmos_databases = [
   {
     name       = "osdu-db"
     throughput = 12000
   }
 ]
-
-blob_cors_rule = [
-  {
-    allowed_headers    = ["*"]
-    allowed_origins    = ["https://osdu-demo.contoso.org"]
-    allowed_methods    = ["GET", "HEAD", "POST", "PUT", "DELETE"]
-    exposed_headers    = ["*"]
-    max_age_in_seconds = 3600
-  }
-]
-
 cosmos_sql_collections = [
   {
     name                  = "LegalTag"
