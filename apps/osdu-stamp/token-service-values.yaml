@@ -7,10 +7,10 @@ metadata:
 spec:
   values:
     ingress:
-      dns: osdu-self-dplcfjd-emgl-gw.westeurope.cloudapp.azure.com
+      dns: osdu-self-dplcccae-ec98-gw.westeurope.cloudapp.azure.com
     configuration:
     - service: token
-      repository: osduselfcplcfjvl3acr.azurecr.io/self-managed-osdu-login
+      repository: osduselfcplcccebq6cr.azurecr.io/self-managed-osdu-login
       tag: latest
       path: /login/*
       replicaCount: 1

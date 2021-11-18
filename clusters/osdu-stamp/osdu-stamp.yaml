@@ -88,3 +88,9 @@ spec:
   - kind: Deployment
     name: workflow
     namespace: osdu-azure
+  - kind: Deployment
+    name: seismic-ddms
+    namespace: ddms-seismic
+  - kind: Deployment
+    name: wellbore-ddms
+    namespace: ddms-wellbore
